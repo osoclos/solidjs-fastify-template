@@ -6,13 +6,31 @@ A simple fullstack template to start building a website quickly with custom serv
 
 ### Running a Development Server
 
-To start a development server for testing and debugging purposes, simply run `<your-personal-package-manager> run dev` in your terminal
-To share it with other devices in the same network, just run `<your-personal-package-manager> run dev-host` in your terminal
+To start a development server for testing and debugging purposes, simply run the following command:
+
+```bash
+<your-personal-package-manager> run dev
+```
+
+To share it with other devices in the same network, change the command to:
+
+```bash
+<your-personal-package-manager> run dev-host
+```
 
 ### Building and Running a Production Build of Your Server
 
-To build a production version of your codebase, run `<your-personal-package-manager> run build`.
-To test and run your production build, run `<your-personal-package-manager> run start` (to share it with other devices, change the command to: `<your-personal-package-manager> run start-host`).
+To build a production version of your codebase, run:
+
+```bash
+<your-personal-package-manager> run build
+```
+
+To test and run your production build, run:
+
+```bash
+<your-personal-package-manager> run start
+```
 
 ## Additional Libraries Included
 
