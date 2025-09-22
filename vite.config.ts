@@ -10,6 +10,8 @@ import tailwindcssPlugin from "@tailwindcss/vite";
 
 const resolveImportPaths = (): Plugin => {
     function resolveId(id: string) {
+        if (id.startsWith("/.well-known/appspecific/")) return path.join(__dirname, id.slice(25)) // reroute any route requests to Chrome Devtools to the root folder
+
         if (!id.startsWith("~")) return null;
 
         const importPath = id.slice(1);
