@@ -1,0 +1,15 @@
+{
+    "extends": ["./tsconfig.json"],
+    "include": ["src/client"],
+
+    "compilerOptions": {
+		// Modules
+		"paths": { "/*": ["./*", "./public/*"] },
+
+        // Language and Environment
+        "lib": ["ES2022", "DOM", "DOM.Iterable"],
+        "target": "ES2022",
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
+    }
+}
