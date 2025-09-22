@@ -3,8 +3,8 @@
     "include": ["src/client"],
 
     "compilerOptions": {
-		// Modules
-		"paths": { "/*": ["./*", "./public/*"] },
+        // Modules
+        "paths": { "/*": ["./*", "./public/*"] },
 
         // Language and Environment
         "lib": ["ES2022", "DOM", "DOM.Iterable"],

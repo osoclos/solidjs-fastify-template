@@ -1,7 +1,7 @@
-import os from "os";
-
 import fastify, { type FastifyListenOptions } from "fastify";
 import fastifyViteAddon from "@fastify/vite";
+
+import { findDeviceNetworkIP } from "./src/server";
 
 const server = fastify();
 await server.register(fastifyViteAddon, {
@@ -15,21 +15,10 @@ await server.vite.ready();
 
 const listenOpts: FastifyListenOptions = { port: 3000 };
 if (process.argv.includes("--host")) {
-    const interfaces = os.networkInterfaces();
+    const ip = findDeviceNetworkIP();
 
-    let res: string | null = null;
-    interfaceLoop: for (const name in interfaces) {
-        const infos = interfaces[name]!;
-
-        for (const { family, address, internal } of infos) {
-            if (internal || family !== "IPv4") continue;
-
-            res = address;
-            break interfaceLoop;
-        }
-    }
-
-    listenOpts.host = res ?? "0.0.0.0";
+    if (ip === null) console.error("unable to find appropriate network IP to host server");
+    else listenOpts.host = ip;
 }
 
 server.listen(listenOpts, () => console.log(`listening to http://${"host" in listenOpts ? listenOpts.host : "localhost"}:${listenOpts.port}/`));
