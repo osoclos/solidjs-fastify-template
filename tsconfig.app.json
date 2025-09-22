@@ -4,7 +4,7 @@
 
     "compilerOptions": {
         // Modules
-        "paths": { "/*": ["./*", "./public/*"] },
+        "paths": { "~/*": ["./src/client/*", "./public/*"] },
 
         // Language and Environment
         "lib": ["ES2022", "DOM", "DOM.Iterable"],

@@ -2,7 +2,7 @@
 import { render } from "solid-js/web";
 
 import "./style.css";
-import App from "./App.tsx";
+import App from "~/App.tsx";
 
 console.log("received HTML code and running client-side code!");
 

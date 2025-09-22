@@ -10,8 +10,8 @@
     "license": "MIT",
 
     "scripts": {
-        "dev": "bun run --watch index.ts --dev",
-        "dev-host": "bun run --watch index.ts --dev --host",
+        "dev": "bun run --watch --tsconfig-override=tsconfig.node.json index.ts --dev",
+        "dev-host": "bun run --watch --tsconfig-override=tsconfig.node.json index.ts --dev --host",
 
         "build": "vite build && tsc",
 

@@ -17,6 +17,7 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "noUncheckedSideEffectImports": true,
+        "paths": { "~/shared/*": ["./src/shared/*"] },
         "types": [],
 
         // Emit

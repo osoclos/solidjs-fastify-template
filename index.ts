@@ -1,7 +1,7 @@
 import fastify, { type FastifyListenOptions } from "fastify";
 import fastifyViteAddon from "@fastify/vite";
 
-import { findDeviceNetworkIP } from "./src/server";
+import { findDeviceNetworkIP } from "~/.";
 
 const server = fastify();
 await server.register(fastifyViteAddon, {

@@ -4,6 +4,7 @@
 
     "compilerOptions": {
         // Modules
+        "paths": {"~/*": ["./src/server/*"] },
         "types": ["@types/bun"],
 
         // Language and Environment
