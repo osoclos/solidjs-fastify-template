@@ -4,6 +4,14 @@ A simple fullstack template to start building a website quickly with custom serv
 
 ## How to Use the Template
 
+### Installing Libraries
+
+To install the libraries/dependencies listed in the `package.json` file, run the following command:
+
+```bash
+<your-personal-package-manager> i
+```
+
 ### Running a Development Server
 
 To start a development server for testing and debugging purposes, simply run the following command:
