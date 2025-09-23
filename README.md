@@ -9,7 +9,7 @@ A simple fullstack template to start building a website quickly with custom serv
 To install the libraries/dependencies listed in the `package.json` file, run the following command:
 
 ```bash
-<your-personal-package-manager> i
+<your-personal-package-manager> install
 ```
 
 ### Running a Development Server
