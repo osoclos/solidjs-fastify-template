@@ -26,21 +26,30 @@ const resolveImportPaths = (): Plugin => {
         if (!prefix.endsWith("/")) return path.join(__dirname, fileRootFolder, importPath); // If the whole path is just an alias, join it with the client root folder
 
         let actualPath = path.join(__dirname, prefix === "shared" ? "src/shared" : fileRootFolder, importPath.slice(prefix.length));
-        if (fs.statSync(actualPath).isFile()) return actualPath;
+        if (fs.existsSync(actualPath)) {
+            const stats = fs.statSync(actualPath);
 
-        if (!isServerFile && prefix !== "shared") {
-            const tsxPath = path.join(actualPath, "index.tsx");
-            if (fs.statSync(tsxPath).isFile()) return tsxPath;
+            if (stats.isFile()) return actualPath;
+
+            let indexPath: string;
+
+            if (isServerFile) {
+                indexPath = path.join(actualPath, "index.tsx");
+                if (fs.statSync(indexPath).isFile()) return indexPath;
+            }
+
+            indexPath = path.join(actualPath, "index.ts");
+            return indexPath;
         }
 
-        actualPath = path.join(actualPath, "index.ts");
+        actualPath += ".ts";
         return actualPath;
     }
 
     return {
         name: "resolve-import-paths",
         resolveId
-    }
+    };
 };
 
 export default defineConfig({
